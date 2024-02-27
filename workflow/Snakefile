@@ -115,7 +115,9 @@ co2target = round(0, 1)
 # gamsfilesha256 = "9b1b86c582b18822fcf9c65045f9c68605e951957cd934cc1713f8cf00a5f375"
 # gamsfilesha256 = "7c58219c0ab4320c806c0460ebba547c10838313c6a1f10f6e6640aab90a4838"
 # gamsfilesha256 = "9cced6b80dad705f6963e4dee1c48af4b8170d42444bb269b049ea8627d6c0e5"
-gamsfilesha256 = "686cc7b751384f1f0401289c1da84f8454221b7eb146bf1b65eb5dae2d08c22a"
+# gamsfilesha256 = "686cc7b751384f1f0401289c1da84f8454221b7eb146bf1b65eb5dae2d08c22a"
+gamsfilesha256 = "446c7b40f1228404f4005d1aae98d98b36ec61eac83c8b0735877ae95c3ee968"
+
 
 # Absolute path to your GAMS installation
 gamspath = config["paths"]["gams"]
@@ -177,7 +179,7 @@ localrules:
 
 rule all:
     input:
-        expand(modelpath / "inputs.finished", zip, year=years, spatial=spatials),
+        expand(modelpath / "results.db", zip, year=years, spatial=spatials),
 
 
 rule ensure_gams_template:
